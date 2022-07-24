@@ -85,3 +85,6 @@ font-weight: bold;
     position: relative;
     left: 25px;
 }
+.myLoc {
+    text-decoration: underline;
+}
