@@ -55,11 +55,14 @@ form.addEventListener("submit", changeCity);
 // unitsCel.addEventListener("click", changeCel);
 
 function showCurrentWeather(response) {
+  console.log(response);
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   let span = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
   span.innerHTML = `${temperature}`;
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.weather[0].description;
 }
 
 function getCurrentPosition(position) {
@@ -79,7 +82,7 @@ let locationButton = document.querySelector("#my-loc");
 locationButton.addEventListener("click", getOnPosition);
 
 function displayWeather(response) {
-  console.log(response.data);
+  document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp);
