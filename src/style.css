@@ -3,7 +3,7 @@
     border: 1px solid gray;
     border-radius: 7px;
     padding: 15px;
-    margin: 20px;
+    margin: 20px auto;
     max-width: 800px;
     margin-bottom: 0;
 }
@@ -79,8 +79,7 @@ font-weight: bold;
     font-family: 'Merriweather', serif;
     font-size: 11px;
     margin-top: 0;
-    position: relative;
-    left: 25px;
+    text-align: center;
 }
 .active {
     color: black;

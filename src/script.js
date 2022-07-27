@@ -49,6 +49,8 @@ function showCurrentWeather(response) {
   windSpeed.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
 
 function getCurrentPosition(position) {
@@ -74,6 +76,7 @@ function displayWeather(response) {
   document.querySelector("#windSpeed").innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   document.querySelector("#description").innerHTML =response.data.weather[0].description;
   document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#icon").setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
 function searchCity(city) {
   let apiKey = "da16704800751c14adceb19bcac00e36";
