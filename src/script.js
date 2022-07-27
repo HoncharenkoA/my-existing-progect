@@ -36,30 +36,12 @@ function changeCity(event) {
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", changeCity);
 
-// function changeFah() {
-//   let temp = 22;
-//   let fahrenheit = Math.round((temp * 9) / 5 + 32);
-//   let temperature = document.querySelector("#temperature");
-//   temperature.innerHTML = `${fahrenheit}`;
-// }
-// let unitsFah = document.querySelector("#fahrenheit-link");
-// unitsFah.addEventListener("click", changeFah);
-
-// function changeCel () {
-// let celsium = 22
-// let temperature = document.querySelector("#temperature");
-// temperature.innerHTML = `${celsium}`;
-// }
-
-// let unitsCel = document.querySelector("#celsium-link");
-// unitsCel.addEventListener("click", changeCel);
-
 function showCurrentWeather(response) {
-  console.log(response);
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   let span = document.querySelector("#temperature");
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   span.innerHTML = `${temperature}`;
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
@@ -86,24 +68,43 @@ let locationButton = document.querySelector("#my-loc");
 locationButton.addEventListener("click", getOnPosition);
 
 function displayWeather(response) {
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML = `Humidity: ${response.data.main.humidity}%`;
   document.querySelector("#windSpeed").innerHTML = `Wind: ${response.data.wind.speed} km/h`;
-  document.querySelector("#description").innerHTML = response.data.weather[0].description;
+  document.querySelector("#description").innerHTML =response.data.weather[0].description;
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp);
-  }
+}
+function searchCity(city) {
+  let apiKey = "da16704800751c14adceb19bcac00e36";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayWeather);
+}
+function findCityWeather(event) {
+  event.preventDefault();
+  let city = document.querySelector("#searchInput").value;
+  searchCity(city);
+}
+function changeFah() {
+  let fahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let showFahrenheit = document.querySelector("#temperature");
+  showFahrenheit.innerHTML = `${fahrenheit}`;
+}
+function changeCel() {
+let celsium = Math.round(celsiusTemperature);
+let showCelsium = document.querySelector("#temperature");
+showCelsium.innerHTML = `${celsium}`;
+}
 
-  function searchCity(city) {
-    let apiKey = "da16704800751c14adceb19bcac00e36";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(url).then(displayWeather);
-  }
-  
-  function findCityWeather(event) {
-    event.preventDefault();
-    let city = document.querySelector("#searchInput").value;
-    searchCity(city);
-  }
-  let formInput = document.querySelector("#search-city");
-  formInput.addEventListener("submit", findCityWeather);
+let celsiusTemperature = null;
+
+let unitsFah = document.querySelector("#fahrenheit-link");
+unitsFah.addEventListener("click", changeFah);
+
+let unitsCel = document.querySelector("#celsium-link");
+unitsCel.addEventListener("click", changeCel);
+
+searchCity("Kyiv");
+
+let formInput = document.querySelector("#search-city");
+formInput.addEventListener("submit", findCityWeather);
