@@ -19,6 +19,7 @@ li {
 
 .description {
     padding: 0;
+    text-transform: capitalize;
 }
 .location {
     font-size: 13px;
