@@ -7,10 +7,6 @@
     max-width: 800px;
     margin-bottom: 0;
 }
-h1 {
-    /* font-family: 'Merriweather', serif; */
-    /* margin-bottom: 20px; */
-}
 li {
     list-style: none;
     color: gray;
@@ -85,4 +81,9 @@ font-weight: bold;
     margin-top: 0;
     position: relative;
     left: 25px;
+}
+.active {
+    color: black;
+    cursor: default;
+    text-decoration: none;
 }

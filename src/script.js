@@ -89,11 +89,15 @@ function changeFah() {
   let fahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
   let showFahrenheit = document.querySelector("#temperature");
   showFahrenheit.innerHTML = `${fahrenheit}`;
+  unitsCel.classList.remove("active");
+  unitsFah.classList.add("active");
 }
 function changeCel() {
 let celsium = Math.round(celsiusTemperature);
 let showCelsium = document.querySelector("#temperature");
 showCelsium.innerHTML = `${celsium}`;
+unitsCel.classList.add("active");
+unitsFah.classList.remove("active");
 }
 
 let celsiusTemperature = null;
