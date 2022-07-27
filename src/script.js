@@ -63,6 +63,10 @@ function showCurrentWeather(response) {
   span.innerHTML = `${temperature}`;
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
+  let windSpeed = document.querySelector("#windSpeed");
+  windSpeed.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 }
 
 function getCurrentPosition(position) {
@@ -82,6 +86,8 @@ let locationButton = document.querySelector("#my-loc");
 locationButton.addEventListener("click", getOnPosition);
 
 function displayWeather(response) {
+  document.querySelector("#humidity").innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  document.querySelector("#windSpeed").innerHTML = `Wind: ${response.data.wind.speed} km/h`;
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
