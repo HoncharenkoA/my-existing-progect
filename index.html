@@ -28,10 +28,10 @@
   </head>
   <body>
     <div class="container">
-        <div class="mainBlock">
+      <div class="mainBlock">
         <div class="row">
           <div class="col-md-6">
-            <h1 id="city"></h1>
+            <h1 class="city-name" id="city"></h1>
           </div>
           <div class="col-md-4">
             <form class="search">
@@ -55,7 +55,6 @@
             </form>
           </div>
         </div>
-
         <div class="location">
           <a href="#" id="my-loc">My location📍</a>
         </div>
@@ -68,7 +67,7 @@
               <li id="windSpeed"></li>
             </ul>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-3">
             <ul class="description">
               <li class="currentDay" id="current-day"></li>
               <li class="currentTime" id="current-time"></li>
@@ -79,82 +78,95 @@
               </span>
             </ul>
           </div>
-          <div class="col-md-8">
-            <div class="position d-flex justify-content-end">
-              <div class="col-md-2">
-                20.06
-                <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
-                <span class="degrees">+18˚</span>
-              </div>
-              <div class="col-md-2">
-                21.06
-                <img class="sun" src="picture/sun.jpg" alt="sun" />
-                <span class="degrees">+20˚</span>
-              </div>
-              <div class="col-md-2">
-                22.06
-                <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
-                <span class="degrees">+23˚</span>
-              </div>
-              <div class="col-md-2">
-                23.06
-                <img class="sun" src="picture/sun.jpg" alt="sun" />
-                <span class="degrees">+21˚</span>
-              </div>
-              <div class="col-md-2">
-                24.06
-                <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
-                <span class="degrees">+20˚</span>
+          <div class="col-md-7">
+            <div class="weather-forecast">
+              <div class="position d-flex justify-content-center">
+                <div class="col-md-2">
+                  20.06
+                  <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
+                  <span class="degrees-max">+18˚</span>
+                  <span class="degrees-min">+11˚</span>
+                </div>
+                <div class="col-md-2">
+                  21.06
+                  <img class="sun" src="picture/sun.jpg" alt="sun" />
+                  <span class="degrees-max">+18˚</span>
+                  <span class="degrees-min">+11˚</span>
+                </div>
+                <div class="col-md-2">
+                  22.06
+                  <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
+                  <span class="degrees-max">+18˚</span>
+                  <span class="degrees-min">+11˚</span>
+                </div>
+                <div class="col-md-2">
+                  23.06
+                  <img class="sun" src="picture/sun.jpg" alt="sun" />
+                  <span class="degrees-max">+18˚</span>
+                  <span class="degrees-min">+11˚</span>
+                </div>
+                <div class="col-md-2">
+                  24.06
+                  <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
+                  <span class="degrees-max">+18˚</span>
+                  <span class="degrees-min">+11˚</span>
+                </div>
               </div>
             </div>
           </div>
           <hr />
-          <div class="row">
-            <div class="d-flex justify-content-end">
-              <div class="col-md-2">
-                <span class="city">London</span>
-                <img class="rain" src="picture/rain.png" alt="rain" />
-                +10ºC
-                <span class="definition">Raining</span>
-              </div>
-              <div class="col-md-2">
-                <span class="city">Tokyo</span>
-                <img class="sun" src="picture/sun.jpg" alt="sun" />
-                +18ºC
-                <span class="definition">Clear</span>
-              </div>
-              <div class="col-md-2">
-                <span class="city">Sydney</span>
-                <img class="sun" src="picture/sun.jpg" alt="sun" />
-                +25ºC
-                <span class="definition">Clear</span>
-              </div>
-              <div class="col-md-2">
-                <span class="city">Lviv</span>
-                <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
-                +22ºC
-                <span class="definition">Cloudy</span>
-              </div>
-              <div class="col-md-2">
-                <span class="city">Paris</span>
-                <img
-                  class="thunder"
-                  src="picture/heavy-rain.png"
-                  alt="thunder"
-                />
-                +10ºC
-                <span class="definition">Thunder</span>
+          <div class="version-city">
+            <div class="row">
+              <div class="d-flex justify-content-center">
+                <div class="col-md-2">
+                  <span class="city">London</span>
+                  <img class="rain" src="picture/rain.png" alt="rain" />
+                  +10ºC
+                  <span class="definition">Raining</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="city">Tokyo</span>
+                  <img class="sun" src="picture/sun.jpg" alt="sun" />
+                  +18ºC
+                  <span class="definition">Clear</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="city">Sydney</span>
+                  <img class="sun" src="picture/sun.jpg" alt="sun" />
+                  +25ºC
+                  <span class="definition">Clear</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="city">Lviv</span>
+                  <img class="cloudy" src="picture/cloudy.png" alt="cloudy" />
+                  +22ºC
+                  <span class="definition">Cloudy</span>
+                </div>
+                <div class="col-md-2">
+                  <span class="city">Paris</span>
+                  <img
+                    class="thunder"
+                    src="picture/heavy-rain.png"
+                    alt="thunder"
+                  />
+                  +10ºC
+                  <span class="definition">Thunder</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <p class="link-source">
-        <a href="https://github.com/HoncharenkoA/my-existing-progect" target="_blank">
-          Open-source code</a>
-        <span> by Anastasiia Honcharenko</span> 
+        <a
+          href="https://github.com/HoncharenkoA/my-existing-progect"
+          target="_blank"
+        >
+          Open-source code</a
+        >
+        <span> by Anastasiia Honcharenko</span>
       </p>
-  </div>
+    </div>
     <script src="src/script.js"></script>
   </body>
 </html>

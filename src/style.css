@@ -12,7 +12,9 @@ li {
     color: gray;
     font-size: 11px;
 }
-
+.city-name {
+    color: rgb(55, 52, 62);
+}
 .description {
     padding: 0;
     text-transform: capitalize;
@@ -24,16 +26,12 @@ li {
     margin-bottom: 10px;
 }
 .currentTime {
-font-size: 15px;
-font-weight: bold;
+    font-size: 15px;
+    font-weight: bold;
 }
 .currentDay {
     font-size: 15px;
     font-weight: bold;
-}
-.sun-main {
-    max-width: 100px;
-    display: block;
 }
 .sun {
     max-width: 60px;
@@ -41,6 +39,7 @@ font-weight: bold;
 }
 .temp {
     font-size: 40px;
+    color: rgb(55, 52, 62);
 }
 .position {
     column-count: 5;
@@ -53,9 +52,13 @@ font-weight: bold;
     max-width: 50px;
     display: block;
 }
-.degrees {
-    font-size: 20px;
+.degrees-min {
+    font-size: 16px;
     font-weight: bold;
+    opacity: 0.6;
+}
+.degrees-max {
+    font-size: 16px;
 }
 .city {
     text-decoration: underline;
@@ -85,4 +88,15 @@ font-weight: bold;
     color: black;
     cursor: default;
     text-decoration: none;
+}
+.weather-forecast{
+    text-align: center;
+    background-color: rgba(237, 198, 238, 0.332);
+    border-radius: 5px;
+    box-shadow: 7px 5px 5px rgba(167, 166, 166, 0.35);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.version-city{
+    text-align: center;
 }
