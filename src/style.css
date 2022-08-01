@@ -33,10 +33,6 @@ li {
     font-size: 15px;
     font-weight: bold;
 }
-.sun {
-    max-width: 60px;
-    display: block;
-}
 .temp {
     font-size: 40px;
     color: rgb(55, 52, 62);
@@ -47,10 +43,6 @@ li {
 .unit {
     position: relative;
     top: -12px;
-}
-.cloudy {
-    max-width: 50px;
-    display: block;
 }
 .degrees-min {
     font-size: 16px;
@@ -64,14 +56,6 @@ li {
     text-decoration: underline;
     font-size: 14px;
     color: rgb(0, 0, 0);
-}
-.rain {
-    max-width: 60px;
-    display: block;
-}
-.thunder {
-    max-width: 60px;
-    display: block;
 }
 .definition {
     color: gray;

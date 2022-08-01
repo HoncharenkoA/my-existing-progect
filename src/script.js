@@ -115,3 +115,91 @@ searchCity("Kyiv");
 
 let formInput = document.querySelector("#search-city");
 formInput.addEventListener("submit", findCityWeather);
+
+function displayLondon(event) {
+  event.preventDefault();
+  let showLondon = document.querySelector("#city-name");
+  showLondon.innerHTML = "London";
+}
+let clickLondon = document.querySelector("#city-london");
+clickLondon.addEventListener("click", displayLondon);
+
+function lookUpLondon(event) {
+  event.preventDefault();
+  let city = "London";
+  let apiKey = "da16704800751c14adceb19bcac00e36";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+clickLondon.addEventListener("click", lookUpLondon);
+
+function displayTokyo(event) {
+  event.preventDefault();
+  let showTokyo = document.querySelector("#city-name");
+  showTokyo.innerHTML = "Tokyo";
+}
+let clickTokyo = document.querySelector("#city-tokyo");
+clickTokyo.addEventListener("click", displayTokyo);
+
+function lookUpTokyo(event) {
+  event.preventDefault();
+  let city = "Tokyo";
+  let apiKey = "da16704800751c14adceb19bcac00e36";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+clickTokyo.addEventListener("click", lookUpTokyo);
+
+function displaySydney(event) {
+  event.preventDefault();
+  let showSydney = document.querySelector("#city-name");
+  showSydney.innerHTML = "Sydney";
+}
+let clickSydney = document.querySelector("#city-sydney");
+clickSydney.addEventListener("click", displaySydney);
+
+function lookUpSydney(event) {
+  event.preventDefault();
+  let city = "Sydney";
+  let apiKey = "da16704800751c14adceb19bcac00e36";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+clickSydney.addEventListener("click", lookUpSydney);
+
+function displayLviv(event) {
+  event.preventDefault();
+  let showLviv = document.querySelector("#city-name");
+  showLviv.innerHTML = "Lviv";
+}
+let clickLviv = document.querySelector("#city-lviv");
+clickLviv.addEventListener("click", displayLviv);
+
+function lookUpLviv(event) {
+  event.preventDefault();
+  let city = "Lviv";
+  let apiKey = "da16704800751c14adceb19bcac00e36";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+clickLviv.addEventListener("click", lookUpLviv);
+
+function displayParis(event) {
+  event.preventDefault();
+  let showParis = document.querySelector("#city-name");
+  showParis.innerHTML = "Paris";
+}
+let clickParis = document.querySelector("#city-paris");
+clickParis.addEventListener("click", displayParis);
+
+function lookUpParis(response) {
+  let city = "Paris";
+  let apiKey = "da16704800751c14adceb19bcac00e36";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  // let description = document.querySelector("#description");
+  // description.innerHTML = response.data.weather[0].description;
+  // let icon = document.querySelector("#icon");
+  // icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  // axios.get(apiUrl).then(displayWeather);
+}
+clickParis.addEventListener("click", lookUpParis);
