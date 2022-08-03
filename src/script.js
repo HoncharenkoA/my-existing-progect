@@ -26,6 +26,30 @@ function formatDate(Date) {
 }
 formatDate(Date);
 
+function displayForecast () {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+  forecastHTML = 
+  forecastHTML + 
+  ` <div class="col-2">
+  <div class="weather-forecast-date">${day}</div>
+  <img
+    src="http://openweathermap.org/img/wn/50d@2x.png"
+    alt=""
+    width="42"
+  />
+  <div class="weather-forecast-temperatures">
+    <span class="weather-forecast-temperature-max"> 18° </span>
+    <span class="weather-forecast-temperature-min"> 12° </span>
+  </div>
+</div>
+`;
+});
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
 function changeCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#searchInput");
@@ -199,7 +223,8 @@ function lookUpParis(response) {
   // let description = document.querySelector("#description");
   // description.innerHTML = response.data.weather[0].description;
   // let icon = document.querySelector("#icon");
-  // icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-  // axios.get(apiUrl).then(displayWeather);
+  // icon.setAttribute("src", `http://api.openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  axios.get(apiUrl).then(displayWeather);
 }
 clickParis.addEventListener("click", lookUpParis);
+displayForecast();
