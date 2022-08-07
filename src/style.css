@@ -84,3 +84,6 @@ li {
 .version-city{
     text-align: center;
 }
+.secondary-weather-icon {
+    width: 70px;
+}
