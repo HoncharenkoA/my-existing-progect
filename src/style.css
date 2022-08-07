@@ -85,5 +85,17 @@ li {
     text-align: center;
 }
 .secondary-weather-icon {
-    width: 70px;
+    width: 60px;
+}
+.secondary-weather-name {
+    font-size: 15px;
+    opacity: 0.6;
+}
+.secondary-weather-des {
+    text-transform: capitalize;
+    font-size: 12px;
+    opacity: 0.6;
+}
+.secondary-weather-temp {
+    font-size: 15px;
 }
