@@ -3,6 +3,13 @@ const CITY_NAME_NODE = document.querySelector("#current-city");
 
 const cities = document.querySelectorAll(".js-city");
 
+const TEMP_UNITS = {
+  CELSIUM: "celsium",
+  FAHRENHEIT: "fahrenheit"
+}
+
+let currentTempUnit = TEMP_UNITS.CELSIUM;
+
 cities.forEach(function (cityNode) {
   const cityName = cityNode.getAttribute("data-city-name");
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
@@ -151,8 +158,12 @@ locationButton.addEventListener("click", getOnPosition);
 
 function displayWeather(response) {
   celsiusTemperature = response.data.main.temp;
-  document.querySelector("#temperature").innerHTML =
-    Math.round(celsiusTemperature);
+  
+  let temperature = Math.round(celsiusTemperature);
+  if (currentTempUnit === TEMP_UNITS.FAHRENHEIT) {
+    temperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  }
+  document.querySelector("#temperature").innerHTML = temperature;
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
@@ -179,19 +190,24 @@ function findCityWeather(event) {
   let city = document.querySelector("#searchInput").value;
   searchCity(city);
 }
-function changeFah() {
+
+function changeFah(event) {
+  event.preventDefault();
+  currentTempUnit = TEMP_UNITS.FAHRENHEIT;
   let fahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
   let showFahrenheit = document.querySelector("#temperature");
   showFahrenheit.innerHTML = `${fahrenheit}`;
   unitsCel.classList.remove("active");
   unitsFah.classList.add("active");
 }
-function changeCel() {
+function changeCel(event) {
+  event.preventDefault();
+  currentTempUnit = TEMP_UNITS.CELSIUM;
   let celsium = Math.round(celsiusTemperature);
   let showCelsium = document.querySelector("#temperature");
-  showCelsium.innerHTML = `${celsium}`;
-  unitsCel.classList.add("active");
+  showCelsium.innerHTML = `${celsium}`; 
   unitsFah.classList.remove("active");
+  unitsCel.classList.add("active");
 }
 
 let celsiusTemperature = null;
